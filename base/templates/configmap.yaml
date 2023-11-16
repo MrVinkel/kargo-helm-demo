@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kargo-helm-demo-content
+data:
+  index.html: |-
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>{{ .Values.env }}</title>
+    </head>
+    <body>
+
+    <h1>{{ .Values.env }}</h1>
+
+    </body>
+    </html>
