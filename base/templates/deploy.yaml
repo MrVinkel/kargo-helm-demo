@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kargo-helm-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kargo-helm-demo
+  template:
+    metadata:
+      labels:
+        app: kargo-helm-demo
+    spec:
+      containers:
+      - name: nginx 
+        image: nginx:{{ .Values.nginx.version }}
+        volumeMounts:
+        - name: content
+          mountPath: /usr/share/nginx/html
+          readOnly: true
+      volumes:
+      - name: content
+        configMap:
+          name: kargo-helm-demo-content
