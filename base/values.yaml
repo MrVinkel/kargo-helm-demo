@@ -1,4 +1,4 @@
 env: default
 nginx:
   version: 1.25.3
-nodePort: 32150
+nodePort: 32158
