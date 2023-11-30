@@ -10,7 +10,7 @@ data:
     <title>{{ .Values.env }}</title>
     </head>
     <body>
-    hello world
+
     <h1>{{ .Values.env }}</h1>
 
     </body>
